@@ -63,6 +63,6 @@ How it works
 Scope for Enhancement
 ---------------------
 
-Additional preferences and more website can easily be added.
+Additional preferences and more websites for application tracking as well as searching for openings can easily be added.
 
 

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>
+    Job Application Tracker - Ishan Tripathi
+</title>
+<link href="jat.css" rel="stylesheet"/>
+<link href="fa1.css" rel="stylesheet"/>
+<script src="mjs.js"></script>
+<script src="c.js"></script>
+<script class="contentInput">
+var name = "Ishan"
+var totapp = 103
+var amazonapp = 26
+var linkedinapp = 40
+var dellapp = 6
+var adobeapp = 2
+var masterapp = 4
+var reuterapp = 7
+var boeingapp = 3
+var paypalapp = 3
+var finastraapp = 0
+var honeyapp = 2
+var naukritapp = 10
+var appdeet = {'Total': {'Interview':4,'Resume Viewed': 7, 'Submitted': 88, 'Application Viewed': 5, 'Unsuccessful': 2, 'Candidate Not Selected for this Position': 1, 'Reply Sent': 1}, 'Amazon': {'Interview':2,'Resume Viewed': 0, 'Submitted': 26, 'Application Viewed': 0}, 'Linkedin': {'Resume Viewed': 4, 'Submitted': 32, 'Application Viewed': 4}, 'Dell': {'Interview':1,'Resume Viewed': 0, 'Submitted': 6, 'Application Viewed': 0}, 'Adobe': {'Resume Viewed': 0, 'Submitted': 2, 'Application Viewed': 0}, 'Master': {'Resume Viewed': 0, 'Submitted': 3, 'Application Viewed': 0, 'Unsuccessful': 2}, 'Reuters': {'Interview':1,'Resume Viewed': 0, 'Submitted': 7, 'Application Viewed': 0}, 'Boeing': {'Resume Viewed': 0, 'Submitted': 3, 'Application Viewed': 0}, 'PayPal': {'Resume Viewed': 0, 'Submitted': 2, 'Application Viewed': 0, 'Candidate Not Selected for this Position': 1}, 'Finastra': {'Resume Viewed': 0, 'Submitted': 0, 'Application Viewed': 0}, 'Honeywell': {'Resume Viewed': 0, 'Submitted': 2, 'Application Viewed': 0}, 'Naukri': {'Resume Viewed': 3, 'Submitted': 5, 'Application Viewed': 1, 'Reply Sent': 1}}
+</script>
+</head>
+<body>
+<div style="height:25vh;">
+<h1 id="namehead" style="text-align: center;font-size: 3vw;color:white;margin:2%;font-family: Helvetica;"></h1>
+<div style="margin-top:0;margin-bottom:1%;left: 50%;transform: translateX(-50%);color:white; height: 10vh; border-radius: 50%; width: 10vh;border: 2px solid white;background:url('ishan-tripathi.jpg');background-size:cover;background-repeat:no-repeat;"></div>
+</div>
+<div class="sconp" id="sconp">
+<div class="swiper-wrapper swrap" id="swrap">
+<div class="swiper-slide" data-hash="applications" id="scosli1">
+<div class="fapo">
+<div class="appcon">
+<div>
+<h2 id="tac"></h2>
+</div>
+<p>Applications Submitted</p>
+</div>
+</div>
+<div class="fapo">
+<canvas id="myChart"></canvas>
+<script>
+    function randColor(n) {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        var colors = [];
+        for(var j = 0; j < n; j++){
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            colors.push(color);
+            color = '#';
+        }
+        return colors;
+    }
+    totlen = 0;
+    labeler = [];
+    for(i in appdeet['Total']){
+        labeler.push(i)
+        totlen += 1
+    }
+    datacol = [];
+    for(i in appdeet['Total']){
+        datacol.push(appdeet['Total'][i])
+    }
+    const data = {
+        labels: labeler,
+        datasets: [{
+            data: datacol,
+            backgroundColor: randColor(totlen),
+            offset: 5,
+            hoverOffset: 25,
+            weight: 2,
+            hoverBorderColor: "#24408e",
+            cutout: "2%",
+            radius: "80%",
+            rotation: 270
+        }]
+    };
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: "Status",
+                        color: "#24408e",
+                        padding: 10,
+                        font: {
+                            size: 30,
+                        },
+                    },
+                    align: 'center',
+                    labels: {
+                        color: "#24408e",
+                        padding: 20,
+                        font: {
+                            size: 20,
+                        },
+                        usePointStyle: true,
+                        textAlign: "left"
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid:{
+                        display:false
+                    },
+                    display: false
+                },
+                x: {
+                    grid:{
+                        display:false
+                    },
+                    display: false
+                }
+            }
+        }
+    });
+</script>
+</div>
+</div>
+<div class="swiper-slide" data-hash="summary" id="scosli13">
+<div style="margin-top:2%;">
+<canvas id="myChart13"></canvas>
+</div>
+</div>
+<div class="swiper-slide" data-hash="amazon" id="scosli2">
+<a href="https://account.amazon.jobs/en-US" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart2"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="linkedin" id="scosli3">
+<a href="https://www.linkedin.com/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart3"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="dell" id="scosli4">
+<a href="https://dell.wd1.myworkdayjobs.com/en-US/External/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart4"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="adobe" id="scosli5">
+<a href="https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart5"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="master" id="scosli6">
+<a href="https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart6"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="reuters" id="scosli7">
+<a href="https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart7"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="boeing" id="scosli8">
+<a href="https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart8"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="paypal" id="scosli9">
+<a href="https://wd1.myworkdaysite.com/en-US/recruiting/paypal/jobs/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart9"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="finastra" id="scosli10">
+<a href="https://dh.wd3.myworkdayjobs.com/DHC/login" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart10"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="honeywell" id="scosli11">
+<a href="https://honeywell.csod.com/ats/careersite/login.aspx" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart11"></canvas>
+</a>
+</div>
+<div class="swiper-slide" data-hash="naukri" id="scosli12">
+<a href="https://www.naukri.com/myapply/historypage" rel="noopener noreferrer" target="_blank">
+<canvas id="myChart12"></canvas>
+</a>
+</div>
+</div>
+<div class="pagip">
+<div aria-controls="loltic-p" aria-label="previous" class="swiper-button-prevss" id="swiper-button-prevss" title="Go Up"><i class="fas fa-chevron-circle-up"></i></div>
+<div class="swiper-pagination"></div>
+<div aria-controls="loltic-p" aria-label="next" class="swiper-button-nextss" id="swiper-button-nextss" title="Go Down"><i class="fas fa-chevron-circle-down"></i></div>
+</div>
+</div>
+</body>
+<script>
+document.getElementById('namehead').innerHTML='Hi '+ name;
+function animateValue(id, start, end, duration) { if (start === end) return; var range = end - start; var current = start; var increment = end > start? 1 : -1; var stepTime = Math.abs(Math.floor(duration / range)); var obj = document.getElementById(id); var timer = setInterval(function() { current += increment; obj.innerHTML = current; if (current == end) { clearInterval(timer); } }, stepTime); } animateValue("tac", 0, totapp, 1000);
+var scrSwiper=new Swiper('.sconp',{direction:'vertical',observer:!0,observeParents:!0,hashNavigation:{enabled:!0,replaceState: !0,watchState:!0,},slidesPerView:1,spaceBetween:0,mousewheel:{enabled:!0,sensitivity:.2,thresholdDelta:40,forceToAxis:!0},keyboard:{enabled:!0,onlyInViewport:!1},navigation:{nextEl:'.swiper-button-nextss',prevEl:'.swiper-button-prevss',},pagination:{render:!0,el:'.swiper-pagination',clickable:!0,type:'bullets',bulletElement:'span'}});
+scrSwiper.on('slideChange', function () {
+    if(scrSwiper.activeIndex == 1){ 
+        var appcom = [amazonapp,linkedinapp,dellapp,adobeapp,masterapp,reuterapp,boeingapp,paypalapp,finastraapp,honeyapp,naukritapp];
+        var appcoms = ['Amazon','Linkedin','Dell',"Adobe","MasterCard","Reuters","Boeing","PayPal","Finastra","Honeywell","Naukri"]
+        const data3 = {
+            labels: appcoms,
+            datasets: [{
+                data: appcom,
+                backgroundColor: randColor(11),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx13 = document.getElementById('myChart13').getContext('2d');
+        var myChart13 = new Chart(ctx13, {
+            type: 'bar',
+            data: data3,
+            options: {
+                responsive: false,
+                indexAxis: 'x',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Summary",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 10,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rectRounded',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        grid:{
+                            display:false
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 2){ 
+        amazonlen = 0;
+        amazonlab = [];
+        for(i in appdeet['Amazon']){
+            amazonlab.push(i);
+            amazonlen += 1;
+        }
+        amazondata = [];
+        for(i in appdeet['Amazon']){
+            amazondata.push(appdeet['Amazon'][i])
+        }
+        const data2 = {
+            labels: amazonlab,
+            datasets: [{
+                data: amazondata,
+                backgroundColor: randColor(amazonlen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Amazon",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 3){
+        linkedinlen = 0;
+        linkedinlab = [];
+        for(i in appdeet['Linkedin']){
+            linkedinlab.push(i);
+            linkedinlen += 1;
+        }
+        linkedindata = [];
+        for(i in appdeet['Linkedin']){
+            linkedindata.push(appdeet['Linkedin'][i])
+        }
+        const data2 = {
+            labels: linkedinlab,
+            datasets: [{
+                data: linkedindata,
+                backgroundColor: randColor(linkedinlen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx3 = document.getElementById('myChart3').getContext('2d');
+        var myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Linkedin",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 4){
+        delllen = 0;
+        delllab = [];
+        for(i in appdeet['Dell']){
+            delllab.push(i);
+            delllen += 1;
+        }
+        delldata = [];
+        for(i in appdeet['Dell']){
+            delldata.push(appdeet['Dell'][i])
+        }
+        const data2 = {
+            labels: delllab,
+            datasets: [{
+                data: delldata,
+                backgroundColor: randColor(delllen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx4 = document.getElementById('myChart4').getContext('2d');
+        var myChart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Dell",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 5){
+        adobelen = 0;
+        adobelab = [];
+        for(i in appdeet['Adobe']){
+            adobelab.push(i);
+            adobelen += 1;
+        }
+        adobedata = [];
+        for(i in appdeet['Adobe']){
+            adobedata.push(appdeet['Adobe'][i])
+        }
+        const data2 = {
+            labels: adobelab,
+            datasets: [{
+                data: adobedata,
+                backgroundColor: randColor(adobelen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx5 = document.getElementById('myChart5').getContext('2d');
+        var myChart5 = new Chart(ctx5, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Adobe",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 6){
+        masterlen = 0;
+        masterlab = [];
+        for(i in appdeet['Master']){
+            masterlab.push(i);
+            masterlen += 1;
+        }
+        masterdata = [];
+        for(i in appdeet['Master']){
+            masterdata.push(appdeet['Master'][i])
+        }
+        const data2 = {
+            labels: masterlab,
+            datasets: [{
+                data: masterdata,
+                backgroundColor: randColor(masterlen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx6 = document.getElementById('myChart6').getContext('2d');
+        var myChart6 = new Chart(ctx6, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Master",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 7){
+        reuterslen = 0;
+        reuterslab = [];
+        for(i in appdeet['Reuters']){
+            reuterslab.push(i);
+            reuterslen += 1;
+        }
+        reutersdata = [];
+        for(i in appdeet['Reuters']){
+            reutersdata.push(appdeet['Reuters'][i])
+        }
+        const data2 = {
+            labels: reuterslab,
+            datasets: [{
+                data: reutersdata,
+                backgroundColor: randColor(reuterslen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx7 = document.getElementById('myChart7').getContext('2d');
+        var myChart7 = new Chart(ctx7, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Reuters",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 8){
+        boeinglen = 0;
+        boeinglab = [];
+        for(i in appdeet['Boeing']){
+            boeinglab.push(i);
+            boeinglen += 1;
+        }
+        boeingdata = [];
+        for(i in appdeet['Boeing']){
+            boeingdata.push(appdeet['Boeing'][i])
+        }
+        const data2 = {
+            labels: boeinglab,
+            datasets: [{
+                data: boeingdata,
+                backgroundColor: randColor(boeinglen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx8 = document.getElementById('myChart8').getContext('2d');
+        var myChart8 = new Chart(ctx8, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Boeing",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 9){
+        paypallen = 0;
+        paypallab = [];
+        for(i in appdeet['PayPal']){
+            paypallab.push(i);
+            paypallen += 1;
+        }
+        paypaldata = [];
+        for(i in appdeet['PayPal']){
+            paypaldata.push(appdeet['PayPal'][i])
+        }
+        const data2 = {
+            labels: paypallab,
+            datasets: [{
+                data: paypaldata,
+                backgroundColor: randColor(paypallen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx9 = document.getElementById('myChart9').getContext('2d');
+        var myChart9 = new Chart(ctx9, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "PayPal",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 10){
+        finastralen = 0;
+        finastralab = [];
+        for(i in appdeet['Finastra']){
+            finastralab.push(i);
+            finastralen += 1;
+        }
+        finastradata = [];
+        for(i in appdeet['Finastra']){
+            finastradata.push(appdeet['Finastra'][i])
+        }
+        const data2 = {
+            labels: finastralab,
+            datasets: [{
+                data: finastradata,
+                backgroundColor: randColor(finastralen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx10 = document.getElementById('myChart10').getContext('2d');
+        var myChart10 = new Chart(ctx10, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Finastra",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 11){
+        honeywelllen = 0;
+        honeywelllab = [];
+        for(i in appdeet['Honeywell']){
+            honeywelllab.push(i);
+            honeywelllen += 1;
+        }
+        honeywelldata = [];
+        for(i in appdeet['Honeywell']){
+            honeywelldata.push(appdeet['Honeywell'][i])
+        }
+        const data2 = {
+            labels: honeywelllab,
+            datasets: [{
+                data: honeywelldata,
+                backgroundColor: randColor(honeywelllen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx11 = document.getElementById('myChart11').getContext('2d');
+        var myChart11 = new Chart(ctx11, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Honeywell",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+    if(scrSwiper.activeIndex == 12){
+        naukrilen = 0;
+        naukrilab = [];
+        for(i in appdeet['Naukri']){
+            naukrilab.push(i);
+            naukrilen += 1;
+        }
+        naukridata = [];
+        for(i in appdeet['Naukri']){
+            naukridata.push(appdeet['Naukri'][i])
+        }
+        const data2 = {
+            labels: naukrilab,
+            datasets: [{
+                data: naukridata,
+                backgroundColor: randColor(naukrilen),
+                base: 1,
+                categoryPercentage: 1.0,
+                barPercentage: 0.5,
+                hoverBackgroundColor: "#24408e",
+                hoverBorderRadius: 25
+            }]
+        };
+        var ctx12 = document.getElementById('myChart12').getContext('2d');
+        var myChart12 = new Chart(ctx12, {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        title: {
+                            display: true,
+                            text: "Naukri",
+                            color: "#24408e",
+                            padding: 10,
+                            font: {
+                                size: 50,
+                            },
+                        },
+                        align: 'center',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var labels = chart.data.labels;
+                                var dataset = chart.data.datasets[0];
+                                var legend = labels.map(function(label, index) {
+                                    return {
+                                    datasetIndex: 0,
+                                    fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                                    strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                                    lineWidth: dataset.borderWidth,
+                                    text: label
+                                    }
+                                });
+                                return legend;
+                            },
+                            color: "#24408e",
+                            padding: 30,
+                            font: {
+                                size: 20,
+                            },
+                            usePointStyle: true,
+                            pointStyle: 'rect',
+                            textAlign: "left",
+                            boxWidth: 80,
+                        }
+                    },
+                },
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid:{
+                            display:false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            precision:0,
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+</html>

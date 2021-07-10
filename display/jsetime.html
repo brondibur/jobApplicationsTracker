@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    Please Wait - Job Application Tracker is loading
+</title>
+<link href="jat.css" rel="stylesheet"/>
+</head>
+<body>
+<div style="height:25vh;">
+<h1 style="text-align: center;font-size: 3vw;color:white;margin:2%;font-family: Helvetica;">Loading</h1>
+<h3 style="text-align: center;font-size: 2vw;color:white;margin:2%;font-family: Helvetica;">Please wait</h3>
+</div>
+<div style="height:75vh;">
+    <div style="top:50%;transform:translateY(-80%);">
+        <div style="height:25vh;width:15vw;background: white;float: left;margin-left:22.5vw;"><p id='aa' style='transition:0.4s;margin:0;font-size: 15vh;color:#24408e;text-align:center;top:50%;transform:translateY(-50%);'></p></div>
+        <div style="height:25vh;width:15vw;background: white;float: left;margin-left:5vw;"><p id='aaa' style='transition:0.4s;margin:0;font-size: 15vh;color:#24408e;text-align:center;top:50%;transform:translateY(-50%);'></p></div>
+        <div style="height:25vh;width:15vw;background: white;float: left;margin-left:5vw;"><p id='aaaa' style='transition:0.4s;margin:0;font-size: 15vh;color:#24408e;text-align:center;top:50%;transform:translateY(-50%);'></p></div>
+    </div>
+</div>
+</body>
+<script>
+    function animateValue(id, id2, id3, start, end, duration) { 
+        if (start === end) return; 
+        var range = end - start; 
+        var current = start; 
+        var increment = end > start? 1 : -1; 
+        var stepTime = Math.abs(Math.floor(duration / range)); 
+        var obj = document.getElementById(id);
+        var obj2 = document.getElementById(id2);
+        var obj3 = document.getElementById(id3); 
+        var timer = setInterval(function() { 
+            current += increment; 
+            obj.innerHTML = Math.floor(current/100); 
+            obj2.innerHTML = Math.floor((current%100)/10);
+            obj3.innerHTML = current%10; 
+            if (current == end) { 
+                clearInterval(timer); 
+            } 
+        }, stepTime); 
+    } 
+    animateValue("aa", 'aaa', 'aaaa', 999, 0, 1500000);
+</script>
+</html>

@@ -1,0 +1,221 @@
+* {
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    transition: 0.4s;
+}
+html, 
+body {
+    min-width:100%;
+    max-width:100%;
+    width: 100%;
+    height:100%;
+    min-height:100%;
+    max-height:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    background:#24408e;
+    overflow:hidden;
+    position:relative;
+}
+.fapo {
+    height:60vh;
+    width:50%;
+    float: left;
+}
+.appcon {
+    width: 50%;
+    margin-left:25%;
+    height: 80%;
+    top: 10%;
+    background: white;
+    color: #24408e;
+    text-align: center;
+}
+.appcon div {
+    height: 80%;
+}
+.appcon h2{
+    font-size: 6vw;
+    margin:0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.appcon p{
+    font-size: 2vw;
+    margin:0;
+    height: 20%;
+}
+#myChart {
+    margin-left:15%;
+    top: 10%;
+    width: 70% !important;
+    height: 80% !important;
+    background: white;
+}
+.sconp {
+    width:100%;
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    overflow:hidden;
+    list-style:none;
+    padding:0;
+    z-index:1;
+    touch-action:pan-x;
+}
+.swiper-wrapper {
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+    overflow: visible;
+    display:flex;
+    transition-property:transform;
+    flex-direction:column;
+    scroll-snap-type:y mandatory;
+    transition-duration: 1.2s !important;
+}
+.swiper-slide {
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    flex-shrink:0;
+    width:100%;
+    height:100%;
+    position:relative;
+    transition-property:transform;
+}
+#scosli1,
+#scosli2,
+#scosli3,
+#scosli4,
+#scosli5,
+#scosli6,
+#scosli7,
+#scosli8,
+#scosli9,
+#scosli10,
+#scosli11,
+#scosli12,
+#scosli13 {
+    height:100% !important;
+    width:100%;
+    z-index:1;
+}
+.swiper-button-nextss,
+.swiper-button-prevss {
+    position: absolute;
+    background: rgba(255, 241, 0, 0.8);
+    color: #fff100;
+    z-index: 10;
+    cursor: pointer;
+    font-size:2vw;
+    position: relative;
+    background:none;
+    -webkit-text-stroke: 2px black;
+    -webkit-text-fill-color: #fff100;
+}
+#swiper-button-prevss {
+    margin-bottom:8px;
+}
+#swiper-button-prevss,
+#swiper-button-nextss {
+    height: 40px;
+    line-height: 90%;
+}
+.pagip {
+    top: 0;
+    left: 2%;
+    position: absolute;
+    z-index: 101;
+    height: auto;
+    background: rgba(255,255,255,0.01);
+}
+.swiper-pagination {
+    text-align: center;
+    transition: .3s;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    width: 100%;
+    padding-top: 30%;
+    cursor: pointer;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 100%;
+    border: 5px solid #24408e;
+    background: #fff100;
+    opacity: 1;
+    margin: 10px auto;
+    transform: translate3d(0px, -50%, 0);
+}
+.swiper-pagination-bullet-active {
+    width: 30px;
+    height: 30px;
+    border: 5px solid #fff100;
+    background: #24408e;
+}
+.swiper-pagination-bullet-active::after {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #24408e;
+    background: #24408e;
+    z-index:100;
+}
+.swiper-pagination-bullets-dynamic {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+}
+#myChart2,
+#myChart3,
+#myChart4,
+#myChart5,
+#myChart6,
+#myChart7,
+#myChart8,
+#myChart9,
+#myChart10,
+#myChart11,
+#myChart12 {
+    width: 70% !important;
+    left: 15%;
+    height: 60% !important;
+    top: 5%;
+    background: white;
+}
+#myChart13 {
+    width: 70% !important;
+    left: 15%;
+    height: 50% !important;
+    background: white;
+}
+.fapos {
+    height:90vh;
+    width:80vw;
+    margin-left: 10%;
+}
+#serparp {
+    width: 50%;
+    left: 0;
+    font-size: 2vw;
+    text-align: center;
+    margin-bottom:5%;
+}
+#serparp::placeholder {
+    font-size: 2vw;
+    text-align: center;
+}
+.contpg {
+    text-align: center;
+}
+.paredesp {
+    padding-bottom: 5%;
+    cursor: default;
+    color: #24408e;
+}

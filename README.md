@@ -36,7 +36,7 @@ How it works
 ![Login](login.gif)
 
 
-3) On completition, dashboard is presented
+3) On completion, dashboard is presented
 ------------------------------------------
 
 ![Summary](summary.png)
